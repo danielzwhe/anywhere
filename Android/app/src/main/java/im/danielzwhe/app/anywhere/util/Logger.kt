@@ -5,7 +5,7 @@ import im.danielzwhe.app.anywhere.Config
 
 object Logger {
 
-    const val DEFAULT_TAG = "anywhere"
+    const val DEFAULT_TAG = "anywhere-tag"
     const val LEVEL_VERBOSE = 5
     const val LEVEL_DEBUG = 4
     const val LEVEL_INFO = 3
