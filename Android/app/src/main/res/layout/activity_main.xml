@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingTop="20dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="20dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/longitudeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="80dp"
+        android:text="Longitude"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/longitudeInputField"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Please input the longitude"
+        android:inputType="numberDecimal"
+        android:maxLines="1"
+        android:text="113.0"
+        app:layout_constraintBottom_toBottomOf="@id/longitudeLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/longitudeLabel"
+        app:layout_constraintTop_toTopOf="@id/longitudeLabel" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/latitudeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:minWidth="80dp"
+        android:text="Latitude"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/longitudeLabel" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/latitudeInputField"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Please input the longitude"
+        android:inputType="numberDecimal"
+        android:maxLines="1"
+        android:text="21.0"
+        app:layout_constraintBottom_toBottomOf="@id/latitudeLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/latitudeLabel"
+        app:layout_constraintTop_toTopOf="@id/latitudeLabel" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/repeatConfigLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:minWidth="80dp"
+        android:text="Repeat info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/latitudeLabel" />
+
+    <LinearLayout
+        android:id="@+id/repeatInfoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/repeatConfigLabel">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Repeat" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/repeatTimeInputField"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="0 means insdfsdf"
+            android:inputType="number"
+            android:maxLines="1"
+            android:text="0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="time" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="interval" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/intervalTimeInputField"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="0 means insdfsdf"
+            android:inputType="number"
+            android:maxLines="1"
+            android:text="0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="second/time" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/mapContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/repeatInfoContainer" />
+
+    <ImageView
+        android:id="@+id/applyButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_send"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/mapContainer" />
+
+    <ImageView
+        android:id="@+id/stopButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_stop"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@id/applyButton"
+        app:layout_constraintTop_toTopOf="@id/applyButton"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
