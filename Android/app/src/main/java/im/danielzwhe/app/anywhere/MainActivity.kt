@@ -99,11 +99,13 @@ class MainActivity : AppCompatActivity(), MainMVP.View, JSCallback {
     override fun getInterval(): Int = intervalTimeInputField.getInt()
 
     override fun onLongClickMap(longitude: BigDecimal, latitude: BigDecimal) {
-        longitudeInputField?.apply {
-            text = Editable.Factory.getInstance().newEditable(longitude.toPlainString())
-        }
-        latitudeInputField?.apply {
-            text = Editable.Factory.getInstance().newEditable(latitude.toPlainString())
+        runOnUiThread {
+            longitudeInputField?.apply {
+                text = Editable.Factory.getInstance().newEditable(longitude.toPlainString())
+            }
+            latitudeInputField?.apply {
+                text = Editable.Factory.getInstance().newEditable(latitude.toPlainString())
+            }
         }
     }
 
